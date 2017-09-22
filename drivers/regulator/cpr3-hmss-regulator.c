@@ -368,7 +368,7 @@ static const int msm8996_v1_v2_hmss_fuse_ref_volt[MSM8996_HMSS_FUSE_CORNERS] = {
 	745000, /* Place holder entry for LowSVS */
 	745000,
 	905000,
-	1015000,
+	1140000,
 };
 
 /* Open loop voltage fuse reference voltages in microvolts for MSM8996 v3 */
@@ -377,7 +377,7 @@ static const int msm8996_v3_hmss_fuse_ref_volt[MSM8996_HMSS_FUSE_CORNERS] = {
 	745000, /* Place holder entry for LowSVS */
 	745000,
 	905000,
-	1250000,
+	1140000,
 };
 
 /*
@@ -390,7 +390,7 @@ static const int msm8996_v3_speed_bin1_rev5_hmss_fuse_ref_volt[
 	745000, /* Place holder entry for LowSVS */
 	745000,
 	905000,
-	1040000,
+	1140000,
 };
 
 /* Defines mapping from retention fuse values to voltages in microvolts */
@@ -715,7 +715,7 @@ static int cpr3_msm8996_hmss_calculate_open_loop_voltages(
 		ref_volt = msm8996_v1_v2_hmss_fuse_ref_volt;
 	else if (soc_revision == 3 && fuse->speed_bin == 1
 				   && fuse->cpr_fusing_rev >= 5)
-		ref_volt = msm8996_v3_hmss_fuse_ref_volt;
+		ref_volt = msm8996_v3_speed_bin1_rev5_hmss_fuse_ref_volt;
 	else
 		ref_volt = msm8996_v3_hmss_fuse_ref_volt;
 
