@@ -36,10 +36,10 @@ static int cpu_pm_notify(enum cpu_pm_event event, int nr_to_call, int *nr_calls,
 	 * could be disfunctional in cpu idle. Copy RCU_NONIDLE code to let
 	 * RCU know this.
 	 */
-	rcu_irq_enter_irqson();
+	rcu_irq_enter();
 	ret = __atomic_notifier_call_chain(&cpu_pm_notifier_chain, event, data,
 		nr_to_call, nr_calls);
-	rcu_irq_exit_irqson();
+	rcu_irq_exit();
 
 	return notifier_to_errno(ret);
 }
