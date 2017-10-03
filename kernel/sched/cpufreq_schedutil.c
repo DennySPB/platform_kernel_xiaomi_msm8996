@@ -760,7 +760,6 @@ static int sugov_exit(struct cpufreq_policy *policy)
 	sugov_policy_free(sg_policy);
 	cpufreq_disable_fast_switch(policy);
 
-	cpufreq_disable_fast_switch(policy);
 	return 0;
 }
 
